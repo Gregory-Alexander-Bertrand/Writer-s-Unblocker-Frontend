@@ -19,20 +19,21 @@ When the user loads the app, a landing page with a number of inspirational writi
 * Prompts are ordered by popularity(how many stories they generate).
 * A way for users to look up prompts by genre.
 * A leaders-board component for writers with most stories.
+* Users can get all stories related to a specific prompt.
 
 ## Routes Table
 
-| Routes      | Path            |Summary                           |
-| ------------|-----------------|----------------------------------|                  
-| Post        | /create         | user signup                      |
-| Post        | /login          | user login                       |
-| Post        | /create/prompt  | user generated prompt            |
-| Put         | /create/stories | user generated stories           |
-| Post        | /create/comment | user posted comments             |
-| Put         | /update/story   | users can edit story.            |
-| Get         | /prompts        | will display all prompts.        |
-| Delete      | /destroy        | Users can delete stories.        |
-| Get         | /allstories     | All stories will be displayed    |
+| Routes      | Path                        |Summary                                            
+| ------------|-----------------------------|------------------------------------------------------------|                                            
+| Post        | /user                       | user signup                                                |           
+| Post        | /login                      | user login                                                 |           
+| Post        | /prompt                     | user generated prompt(user:id will live in auth)           |           
+| Post        | /prompts/prompt/:id/stories | user generated stories                                     |
+| Post        | /stories/story/:id/comment  | user posted comments                                       |           
+| Put         | /story/story/:id            | users can edit story.                                      |
+| Get         | /prompts                    | will display all prompts.                                  |
+| Delete      | /stories/story/:id          | Users can delete stories.                                  |
+| Get         | /allstories                 | All stories will be displayed                              |
 
 ## Technology Implemented
 * React
@@ -49,3 +50,4 @@ When the user loads the app, a landing page with a number of inspirational writi
 
 ## Foreseen Challenges
 * Defining Association relationships between tables.
+* Finding a way to show which stories are connected to a single prompt.
