@@ -23,7 +23,7 @@ When the user loads the app, a landing page with a number of inspirational writi
 ## Routes Table
 
 | Routes      | Path            |Summary                           |
-| ------------|----------------------------------------------------|                  
+| ------------|-----------------|----------------------------------|                  
 | Post        | /create         | user signup                      |
 | Post        | /login          | user login                       |
 | Post        | /create/prompt  | user generated prompt            |
