@@ -4,6 +4,7 @@ import { Redirect, Route, Router} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
+import Prompts from './Pages/Prompts'
 import Navbar from './Components/Navbar'
 
 
@@ -23,6 +24,12 @@ function App() {
      render={(props) => (
        <Login {...props} setUser={setUser} />
      )}
+    />
+    <Route 
+    path="/Prompts"
+    render={(props) => (
+      <Prompts {...props} setUser={setUser} />
+    )}
     />
     </div>
   );
