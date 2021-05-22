@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { TextField, Box, Button} from '@material-ui/core'
 import axios from 'axios'
 const SignupForm = (props) => {
     const [name, setName] = useState('')
@@ -20,21 +21,14 @@ const SignupForm = (props) => {
     return (
         <div className="Login-Signup">
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name:</label>
-                    <input id="name" value={name} onChange={(e) => setName(e.target.value)} />
-                </div>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <div>
-                    <input type="submit" value="Sign up"></input>
-                </div>
+                <h1>Sign Up</h1>
+                <TextField id="standard-basic" label="name" required value={name} onChange={(e) => setName(e.target.value)} />
+                <Box m={.6} />
+                <TextField id="standard-basic" label="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Box m={.6} />
+                <TextField id="standard-basic" label="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                <Box m={.6} />
+                <Button type="submit">Sign up</Button>
             </form>
         </div>
     )

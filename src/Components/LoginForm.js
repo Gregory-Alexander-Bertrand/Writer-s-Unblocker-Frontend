@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { TextField, Box, Button } from '@material-ui/core'
 import axios from 'axios'
 
 const LoginForm = (props) => {
@@ -20,15 +21,12 @@ const LoginForm = (props) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input id="password" type="password"  value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <input type="submit" value="Login" />
+                <h1>Login</h1>
+                <TextField id="standard-basic" label="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Box m={.6} />
+                <TextField id="standard-basic" label="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                <Box m={.6} />
+                <Button type='submit'>Login</Button>
             </form>
         </div>
     )
