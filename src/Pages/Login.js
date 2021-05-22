@@ -1,12 +1,16 @@
 import React from 'react'
+import { useState} from 'react'
 import SignupForm from '../Components/SignupForm'
+import LoginForm from '../Components/LoginForm'
 
 
-const Login = () => {
+
+const Login = (props) => {
+    const [user, setUser] = useState({})
     return (
         <div>
-            <SignupForm />
-            <h1>HELLO FROM LOGIN AND SIGN UP</h1>
+            <SignupForm {...props} setUser={setUser}/>
+            <LoginForm {...props} setUser={setUser} />
         </div>
     )
 }
