@@ -5,6 +5,7 @@ import {useState, useEffect} from 'react'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
 import Prompts from './Pages/Prompts'
+import CreatePrompts from './Pages/CreatePrompts'
 import Navbar from './Components/Navbar'
 
 
@@ -31,6 +32,12 @@ function App() {
       <Prompts {...props} setUser={setUser} />
     )}
     />
+   <Route 
+   path="/CreatePrompts"
+   render={() => {
+     return <CreatePrompts />
+   }}
+   />
     </div>
   );
 }

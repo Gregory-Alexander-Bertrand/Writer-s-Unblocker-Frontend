@@ -28,9 +28,10 @@ const Navbar = (props) => {
                 </>
                 }
             </nav> */}
-                <Link to="/">Home</Link>
+            <Link to="/">Home</Link>
             <Link to="/Login">Login & Signup</Link>
             <Link to="/Prompts">Prompts</Link>
+            <Link to="/CreatePrompts">Create Prompts</Link>
         </div>
         </header>
     )
