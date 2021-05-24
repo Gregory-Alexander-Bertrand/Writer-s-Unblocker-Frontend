@@ -16,6 +16,7 @@ const Navbar = (props) => {
                 <>
                 <Link to="/Prompts">Prompts</Link>
                 <Link to="/CreatePrompts">Create Prompts</Link>
+                <Link to="/ReadStories">All Stories</Link>
                 { '-'  }
                 <span onClick={() => logout()}>
                     <Link to="/">Logout</Link>

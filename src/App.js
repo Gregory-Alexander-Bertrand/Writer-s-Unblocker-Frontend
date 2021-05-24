@@ -8,6 +8,7 @@ import Login from './Pages/Login'
 import Prompts from './Pages/Prompts'
 import CreatePrompts from './Pages/CreatePrompts'
 import CreateStory from './Pages/CreateStory'
+import ReadStories from './Pages/ReadStories'
 import Navbar from './Components/Navbar'
 
 
@@ -85,6 +86,16 @@ function App() {
      console.log(routingInfo)
      const id = routingInfo.match.params.id
      return<CreateStory prompt={id} />
+   }}
+   />
+   <Route 
+   path="/ReadStories"
+   render={() => {
+     if(user.id) {
+       return <ReadStories user={user}/>
+     } else {
+       return <Redirect to="/" />
+     }
    }}
    />
     </div>
