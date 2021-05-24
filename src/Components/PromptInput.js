@@ -23,8 +23,12 @@ const PromptInput = () => {
         })
     }
 
+    const createMarkup = () => {
+        return {__html: 'Success'}
+    }
+
     const successMessage = () => {
-        console.log('Success')
+        return <div dangerouslySetInnerHTML={createMarkup()} />
     }
 
    

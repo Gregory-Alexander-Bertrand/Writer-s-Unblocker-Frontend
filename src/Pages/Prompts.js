@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Prompts = (props) => {
     const [prompts, setPrompts] = useState([])
@@ -32,7 +33,8 @@ const Prompts = (props) => {
             </ul> */}
            {prompts.map((prompt) => {
                return (
-               <li key={prompt.id}>{prompt.prompt}  {prompt.genre}</li>
+            //    <li key={prompt.id}>{prompt.prompt}  {prompt.genre}</li>
+               <Link key={prompt.id} to={`/Prompts/${prompt.id}/CreateStory`}>{prompt.prompt}</Link>
                )
            })}
         </div>

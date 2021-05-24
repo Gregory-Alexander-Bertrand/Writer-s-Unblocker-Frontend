@@ -7,6 +7,7 @@ import Home from './Pages/Home'
 import Login from './Pages/Login'
 import Prompts from './Pages/Prompts'
 import CreatePrompts from './Pages/CreatePrompts'
+import CreateStory from './Pages/CreateStory'
 import Navbar from './Components/Navbar'
 
 
@@ -76,6 +77,14 @@ function App() {
    path="/CreatePrompts"
    render={() => {
      return <CreatePrompts />
+   }}
+   />
+   <Route
+   path="/Prompts/:id/CreateStory"
+   render={(routingInfo) => {
+     console.log(routingInfo)
+     const id = routingInfo.match.params.id
+     return<CreateStory prompt={id} />
    }}
    />
     </div>
