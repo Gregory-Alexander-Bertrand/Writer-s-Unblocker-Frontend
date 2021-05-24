@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Prompts = (props) => {
-    const [prompts, setPrompts] = useState('')
+    const [prompts, setPrompts] = useState([])
     const [genre, setGenre] = useState('')
 
     const getAllPrompts = (e) => {
@@ -11,13 +11,15 @@ const Prompts = (props) => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/prompts`, {
             prompt, genre
         }).then((response) => {
-            console.log(response.data.prompts)
-            {Object.keys(prompts).map((keyName, i) => (
-                <li>{i}</li>
-                ))}
+            console.log(response.data)
+           setPrompts(response.data.prompts)
+            // {Object.prompts.map((prompt) => (
+            //     <li>{prompt.id}</li>
+            //     ))} 
         })
     }
 
+  
     // {Object.keys(prompts).map((keyName, i) => (
     // <li>{i}</li>
     // ))}
@@ -28,11 +30,11 @@ const Prompts = (props) => {
             {/* <ul>
                 {prompts}
             </ul> */}
-           {/* {prompts.map((prompt) => {
+           {prompts.map((prompt) => {
                return (
-               <li key={prompt.id}>{prompt.prompt}</li>
+               <li key={prompt.id}>{prompt.prompt}  {prompt.genre}</li>
                )
-           })} */}
+           })}
         </div>
     )
 }
