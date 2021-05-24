@@ -1,9 +1,16 @@
 import React from 'react'
 import { useState } from 'react'
 import { TextField, Box, Button} from '@material-ui/core'
+// import Snackbar from '@material-ui/core'
+// import MuiAlert from '@material-ui/core'
+// import { makeStyles } from '@material-ui/core'
 import axios from 'axios'
 
+
+
 const PromptInput = () => {
+
+    
     const [genre, setGenre] = useState('')
     const [prompt, setPrompt] = useState('')
 
@@ -15,6 +22,13 @@ const PromptInput = () => {
             console.log(response)
         })
     }
+
+    const successMessage = () => {
+        console.log('Success')
+    }
+
+   
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -23,7 +37,7 @@ const PromptInput = () => {
                 <Box m={.6} />
                 <TextField id="outlined-basic" label="Prompt" required vale={prompt} onChange={(e) => setPrompt(e.target.value)} />
                 <Box m={2} />
-                <Button type="submit">Inspire Others</Button>
+                <Button type="submit" onClick={successMessage}>Inspire Others</Button>
             </form>
         </div>
     )

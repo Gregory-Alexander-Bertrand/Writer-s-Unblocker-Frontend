@@ -6,16 +6,21 @@ import axios from 'axios'
 const LoginForm = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
    
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setError('')
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, {
             email, password
         }).then((response) => {
             console.log(response.data.user)
             props.setUser(response.data.user)
-            localStorage.setItem('userId', response.data.user_id)
+            localStorage.setItem('userId', response.data.user.id)
+        })
+        .catch((err) => {
+            setError(err.response.data.message)
         })
     }
     return (

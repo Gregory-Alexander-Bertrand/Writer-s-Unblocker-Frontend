@@ -11,10 +11,11 @@ const Navbar = (props) => {
     return (
         <header>
         <div className="navigation">
-            {/* <nav>
-                {props.userId ?
+            <nav>
+                {props.user.id ?
                 <>
                 <Link to="/Prompts">Prompts</Link>
+                <Link to="/CreatePrompts">Create Prompts</Link>
                 { '-'  }
                 <span onClick={() => logout()}>
                     <Link to="/">Logout</Link>
@@ -27,11 +28,11 @@ const Navbar = (props) => {
                 <Link to="/Login">Login & Signup</Link>
                 </>
                 }
-            </nav> */}
-            <Link to="/">Home</Link>
+            </nav>
+            {/* <Link to="/">Home</Link>
             <Link to="/Login">Login & Signup</Link>
             <Link to="/Prompts">Prompts</Link>
-            <Link to="/CreatePrompts">Create Prompts</Link>
+            <Link to="/CreatePrompts">Create Prompts</Link> */}
         </div>
         </header>
     )
