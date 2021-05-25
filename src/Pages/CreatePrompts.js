@@ -6,6 +6,7 @@ const CreatePrompts = () => {
     return (
         <div>
             <PromptInput />
+            <h3>Update your stories by clicking on their title</h3>
             <MyStories />
         </div>
     )

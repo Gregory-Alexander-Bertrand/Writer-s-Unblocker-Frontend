@@ -9,7 +9,9 @@ import Prompts from './Pages/Prompts'
 import CreatePrompts from './Pages/CreatePrompts'
 import CreateStory from './Pages/CreateStory'
 import ReadStories from './Pages/ReadStories'
+import Revisions from './Pages/Revisions'
 import Navbar from './Components/Navbar'
+
 
 
 function App() {
@@ -95,6 +97,16 @@ function App() {
    render={() => {
      if(user.id) {
        return <ReadStories user={user}/>
+     } else {
+       return <Redirect to="/" />
+     }
+   }}
+   />
+   <Route
+   path="/MyStories/:id/Revisions"
+   render={() => {
+     if(user.id) {
+       return <Revisions user={user} />
      } else {
        return <Redirect to="/" />
      }
