@@ -4,16 +4,29 @@ import axios from 'axios'
 import { TextField, Button} from '@material-ui/core'
 import { Textarea } from '@chakra-ui/react'
 
-const Revisions = () => {
+const Revisions = ({id}) => {
+    const [title, setTitle] = useState('')
+    const [story, setStory] = useState('')
+
+    const updateStory = (e) => {
+        e.preventDefault()
+        console.log(id)
+        axios.put(`${process.env.REACT_APP_BACKEND_URL}/story/story/${id}`, {
+            title, story
+        }).then((response) => {
+            console.log(response)
+        })
+    }
+
     return (
         <div>
             <h1>Time to create that all important 2nd draft, or 3rd, or 4th...</h1>
-            <form>
+            <form onSubmit={updateStory}>
                 <div>
-                <TextField id="standard-basic" label="title" />
+                <TextField id="standard-basic" label="title" required value={title} onChange={(e) => setTitle(e.target.value)} />
                 </div>
                 <div>
-                <Textarea />
+                <Textarea value={story} required onChange={(e) => setStory(e.target.value)} />
                 </div>
                 <div>
                     <button type="submit">Update Story</button>

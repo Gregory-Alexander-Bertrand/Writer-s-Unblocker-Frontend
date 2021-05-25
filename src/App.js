@@ -104,9 +104,9 @@ function App() {
    />
    <Route
    path="/MyStories/:id/Revisions"
-   render={() => {
+   render={(props) => {
      if(user.id) {
-       return <Revisions user={user} />
+       return <Revisions user={user} id={props.match.params.id} />
      } else {
        return <Redirect to="/" />
      }
