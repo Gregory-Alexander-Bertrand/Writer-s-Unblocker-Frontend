@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { useState} from 'react'
+import { Button } from '@material-ui/core'
+import { Box } from '@chakra-ui/react'
 
 const ReadStories = (props) => {
     const [stories, setStories] = useState([])
@@ -16,12 +18,19 @@ const ReadStories = (props) => {
             setStories(response.data.stories)
         })
     }
+   
     return (
         <div>
             <button onClick={getAllStories}>Get Stories</button>
             {stories.map((story) => {
                 return (
-                <p key={story.id}>{story.story}  {story.title}</p>
+                <div>
+                    
+                    {/* <p key={story.id}>{story.story}</p> */}
+                    <p>{story.title}</p>
+                <Box w="100%" key={story.id}>{story.story}</Box>
+                    
+                </div>
         
                 )
             })}

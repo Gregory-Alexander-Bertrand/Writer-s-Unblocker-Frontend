@@ -1,9 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { TextField, Box, Button} from '@material-ui/core'
-// import Snackbar from '@material-ui/core'
-// import MuiAlert from '@material-ui/core'
-// import { makeStyles } from '@material-ui/core'
+import { TextField, Box, Button} from '@material-ui/core' 
 import axios from 'axios'
 
 
@@ -23,15 +20,11 @@ const PromptInput = () => {
         })
     }
 
-    const createMarkup = () => {
-        return {__html: 'Success'}
-    }
-
     const successMessage = () => {
-        return <div dangerouslySetInnerHTML={createMarkup()} />
+        console.log('success')
     }
-
    
+    
 
     return (
         <div>

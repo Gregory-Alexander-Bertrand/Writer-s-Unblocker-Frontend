@@ -14,6 +14,7 @@ import Navbar from './Components/Navbar'
 
 function App() {
   const [user, setUser] = useState({})
+  const [stories, setStories] = useState({})
 
   const fetchUser = () => {
     if (localStorage.getItem('userId')) {
@@ -25,6 +26,7 @@ function App() {
       .then((response) => {
         console.log(response)
         setUser(response.data.user)
+        setStories(response.data.user.stories)
       })
     }
   }
