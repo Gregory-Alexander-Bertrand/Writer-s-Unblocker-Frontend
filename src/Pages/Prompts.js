@@ -21,9 +21,6 @@ const Prompts = (props) => {
     }
 
   
-    // {Object.keys(prompts).map((keyName, i) => (
-    // <li>{i}</li>
-    // ))}
 
     return (
         <div>

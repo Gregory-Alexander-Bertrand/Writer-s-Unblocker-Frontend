@@ -26,10 +26,13 @@ const ReadStories = (props) => {
             {stories.map((story) => {
                 return (
                 <div className="single-story-container">
-                    
-                    {/* <p key={story.id}>{story.story}</p> */}
                     <p>{story.title}</p>
                 <Box w="100%" key={story.id}>{story.story}</Box>
+                <ul>
+                    {story.comments.map((comment) => {
+                        return <li>{comment.body}</li>
+                    })}
+                </ul>
                 <CommentBox commentSubmit={story.id} />
                 </div>
         
