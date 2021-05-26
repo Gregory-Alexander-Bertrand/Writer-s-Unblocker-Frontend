@@ -15,9 +15,11 @@ const Navbar = (props) => {
                 {props.user.id ?
                 <>
                 <Link to="/Prompts">Prompts</Link>
+                { ' - '  }
                 <Link to="/CreatePrompts">Create Prompts</Link>
+                { ' - '  }
                 <Link to="/ReadStories">All Stories</Link>
-                { '-'  }
+                { ' - '  }
                 <span onClick={() => logout()}>
                     <Link to="/">Logout</Link>
                 </span>
@@ -30,10 +32,6 @@ const Navbar = (props) => {
                 </>
                 }
             </nav>
-            {/* <Link to="/">Home</Link>
-            <Link to="/Login">Login & Signup</Link>
-            <Link to="/Prompts">Prompts</Link>
-            <Link to="/CreatePrompts">Create Prompts</Link> */}
         </div>
         </header>
     )

@@ -33,8 +33,9 @@ const Prompts = (props) => {
             </ul> */}
            {prompts.map((prompt) => {
                return (
-            //    <li key={prompt.id}>{prompt.prompt}  {prompt.genre}</li>
+                <div>
                <Link key={prompt.id} to={`/Prompts/${prompt.id}/CreateStory`}>{prompt.prompt}</Link>
+               </div>
                )
            })}
         </div>

@@ -26,7 +26,7 @@ const SignupForm = (props) => {
                 <Box m={.6} />
                 <TextField id="standard-basic" label="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
                 <Box m={.6} />
-                <TextField id="standard-basic" label="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                <TextField id="standard-basic" label="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
                 <Box m={.6} />
                 <Button type="submit">Sign up</Button>
             </form>

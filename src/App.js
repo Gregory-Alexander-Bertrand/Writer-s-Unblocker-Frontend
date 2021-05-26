@@ -45,29 +45,19 @@ function App() {
       return <Home />
     }}
     />
-    {/* <Route 
-     path="/Login"
-     render={(props) => (
-       <Login {...props} setUser={setUser} />
-     )}
-    /> */}
+    
     <Route
     path="/Login"
     render={() => {
       console.log(user.id)
       if (user.id) {
-        return <Redirect to="/" />
+        return <Prompts user={user} />
       } else {
         return <Login setUser={setUser} />
       }
     }}
     />
-    {/* <Route 
-    path="/Prompts"
-    render={(props) => (
-      <Prompts {...props} setUser={setUser} />
-    )}
-    /> */}
+    
     <Route 
     exact path="/Prompts"
     render={() => {
@@ -96,7 +86,7 @@ function App() {
    path="/ReadStories"
    render={() => {
      if(user.id) {
-       return <ReadStories user={user}/>
+       return <ReadStories user={user} />
      } else {
        return <Redirect to="/" />
      }
