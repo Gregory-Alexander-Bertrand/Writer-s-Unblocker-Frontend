@@ -20,7 +20,7 @@ const SignupForm = (props) => {
     }
     return (
         <div className="Login-Signup">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="sign-up">
                 <h1>Sign Up</h1>
                 <TextField id="standard-basic" label="name" required value={name} onChange={(e) => setName(e.target.value)} />
                 <Box m={.6} />
