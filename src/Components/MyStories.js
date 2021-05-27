@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import DeleteBtn from '../Components/DeleteBtn'
 import { Link } from 'react-router-dom'
-import Button from '@material-ui/core/Button'
+
 
 
 const MyStories = (props) => {
@@ -25,7 +25,7 @@ const MyStories = (props) => {
    }
     return (
         <div>
-            <Button onClick={getUserStories} variant="outlined">See My Stories</Button>
+            <button onClick={getUserStories} className="stories-btn">See My Stories</button>
             <div className="story-collection">
             {stories.map((story) => {
                 return (

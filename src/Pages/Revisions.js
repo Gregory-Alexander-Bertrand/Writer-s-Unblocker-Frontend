@@ -8,8 +8,7 @@ const Revisions = ({id}) => {
     const [title, setTitle] = useState('')
     const [story, setStory] = useState('')
 
-    const updateStory = (e) => {
-        e.preventDefault()
+    const updateStory = () => {
         console.log(id)
         axios.put(`${process.env.REACT_APP_BACKEND_URL}/story/story/${id}`, {
             title, story
@@ -19,7 +18,7 @@ const Revisions = ({id}) => {
     }
 
     return (
-        <div>
+        <div className="revisions">
             <h1>Time to create that all important 2nd draft, or 3rd, or 4th...</h1>
             <form onSubmit={updateStory}>
                 <div>
@@ -29,7 +28,7 @@ const Revisions = ({id}) => {
                 <Textarea value={story} required onChange={(e) => setStory(e.target.value)} />
                 </div>
                 <div>
-                    <button type="submit">Update Story</button>
+                    <Button type="submit">Update Story</Button>
                 </div>
             </form>
         </div>

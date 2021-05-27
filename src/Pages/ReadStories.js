@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 import { useState} from 'react'
-import { Button } from '@material-ui/core'
 import { Box } from '@chakra-ui/react'
 import CommentBox from '../Components/CommentBox'
 
@@ -22,11 +21,11 @@ const ReadStories = (props) => {
    
     return (
         <div className="story-container">
-            <Button onClick={getAllStories} variant="outlined">Get Stories</Button>
+            <button onClick={getAllStories} className="get-stories-btn">Get Stories</button>
             {stories.map((story) => {
                 return (
                 <div className="single-story-container">
-                    <p>{story.title}</p>
+                    <h1>{story.title}</h1>
                 <Box w="100%" key={story.id}>{story.story}</Box>
                 <ul>
                     {story.comments.map((comment) => {

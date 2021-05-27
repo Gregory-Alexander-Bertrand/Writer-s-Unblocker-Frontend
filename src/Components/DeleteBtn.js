@@ -6,13 +6,11 @@ import Button from '@material-ui/core/Button'
 
 const DeleteBtn = (props) => {
     const [story, setStory] = useState([])
-    // const [shouldReloadStories, setShouldReloadStories] = useState(false)
     
     const deleteStory = (id) => {
         axios.delete(`${process.env.REACT_APP_BACKEND_URL}/stories/story/${id}`, {
             story
         }).then((response) => {
-            // setShouldReloadStories(true)
             console.log(response)
         })
     }
