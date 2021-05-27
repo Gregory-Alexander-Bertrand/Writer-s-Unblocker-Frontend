@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+
 const Prompts = (props) => {
     const [prompts, setPrompts] = useState([])
     const [genre, setGenre] = useState('')
@@ -14,27 +15,23 @@ const Prompts = (props) => {
         }).then((response) => {
             console.log(response.data)
            setPrompts(response.data.prompts)
-            // {Object.prompts.map((prompt) => (
-            //     <li>{prompt.id}</li>
-            //     ))} 
         })
     }
 
   
 
     return (
-        <div>
-            <button onClick={getAllPrompts}>Get Prompts</button>
-            {/* <ul>
-                {prompts}
-            </ul> */}
+        <div className="all-prompts">
+            <button onClick={getAllPrompts} className="render-prompts">Get Prompts</button>
+            <div className="prompt-container">
            {prompts.map((prompt) => {
                return (
-                <div>
-               <Link key={prompt.id} to={`/Prompts/${prompt.id}/CreateStory`}>{prompt.prompt}</Link>
+                <div className="prompt-links">
+               <Link key={prompt.id} to={`/Prompts/${prompt.id}/CreateStory`} className="prompt">{prompt.prompt}</Link>
                </div>
                )
            })}
+           </div>
         </div>
     )
 }

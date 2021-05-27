@@ -51,7 +51,7 @@ function App() {
     render={() => {
       console.log(user.id)
       if (user.id) {
-        return <Prompts user={user} />
+        return <Redirect to="/Prompts" />
       } else {
         return <Login setUser={setUser} />
       }

@@ -6,11 +6,14 @@ import LoginForm from '../Components/LoginForm'
 
 
 const Login = (props) => {
-    const [user, setUser] = useState({})
     return (
         <div className="Login">
-            <SignupForm {...props} setUser={setUser}/>
-            <LoginForm {...props} setUser={setUser} />
+            <div className="split left">
+            <SignupForm {...props} />
+            </div>
+            <div className="split right">
+            <LoginForm {...props} />
+            </div>
         </div>
     )
 }

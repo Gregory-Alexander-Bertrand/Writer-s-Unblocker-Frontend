@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Ultra');
 /* inspiration and source for card animation: https://codepen.io/onion2k/pen/xxZYBVj */
 .App {
   text-align: center;
   height: 100vh;
 }
+
+
+nav {
+  font-family: 'Anton';
+  font-size: 20px;
+}
+
 
 .home {
   height: 100%;
@@ -12,9 +20,13 @@
   background-size: cover;
 }
 
+.motto {
+  font-family: 'Anton';
+  color: #e7decc;
+}
+
 .carousel {
   height: 600px;
-  border: 1px solid;
   margin: 0;
   display: grid;
   grid-template-rows: 500px 100px;
@@ -38,6 +50,9 @@ main#carousel {
   --middle: 3;
   --position: 1;
   pointer-events: none;
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
 }
 
 div.item {
@@ -117,13 +132,8 @@ input:nth-of-type(5):checked ~ main#carousel {
 }
 
 .quote {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50%;
   font-family: 'Anton';
-  font-size: 30px;
+  color: #e7decc;
 }
 
 .Login {
@@ -131,14 +141,38 @@ input:nth-of-type(5):checked ~ main#carousel {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  border: 3px solid black;
   height: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .sign-up {
   animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
   -o-animation: fadeIn 5s;
+}
+
+.login {
+  animation: fadIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background-color: #deb887;
+}
+
+.split.right {
+  right: 0;
+  background-color: #5f9ea0;
 }
 
 @keyframes fadeIn {
@@ -154,6 +188,76 @@ input:nth-of-type(5):checked ~ main#carousel {
 @-o-keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
+}
+
+.all-prompts {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.render-prompts {
+  height: 100px;
+  width: 300px;
+  transition: all 0.5s;
+  position: relative;
+  font-family: 'Ultra';
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.render-prompts::before {
+  content: 'Press me';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #deb887;
+  transition: all 0.3s;
+}
+
+.render-prompts:hover::before {
+  opacity: 0;
+  transform: scale(0.8, 0.8);
+}
+
+.render-prompts::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid silver;
+  transform: scale(1.3, 1.3);
+}
+
+.render-prompts:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.prompt-container {
+  border: 1px solid black;
+  background-image: url(https://images.unsplash.com/photo-1555601568-c9e6f328489b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
+  background-size: cover;
+  height: 800px;
+}
+
+.prompt-links {
+  height: 100px;
+  font-family: 'Ultra';
+}
+
+.prompt {
+  color:rosybrown;
 }
 
 .story-container {

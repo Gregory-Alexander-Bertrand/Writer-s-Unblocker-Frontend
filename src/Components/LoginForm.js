@@ -25,7 +25,7 @@ const LoginForm = (props) => {
     }
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="login">
                 <h1>Login</h1>
                 <TextField id="standard-basic" label="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
                 <Box m={.6} />
