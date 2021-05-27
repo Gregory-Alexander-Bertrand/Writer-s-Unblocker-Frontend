@@ -28,13 +28,13 @@ const PromptInput = () => {
     
 
     return (
-        <div>
+        <div className="prompt-input">
             <form onSubmit={handleSubmit}>
                 <h1>Create a unique prompt for everyone to use</h1>
-                <TextField id="outlined-basic" label="Genre" required value={genre} onChange={(e) => setGenre(e.target.value)} />
+                <TextField id="outlined-basic" label="Genre" required value={genre} onChange={(e) => setGenre(e.target.value)}  size="medium"/>
                 <Box m={.6} />
-                <TextField id="outlined-basic" label="Prompt" required vale={prompt} onChange={(e) => setPrompt(e.target.value)} />
-                <Box m={2} />
+                <TextField id="outlined-basic" label="Prompt" required vale={prompt} onChange={(e) => setPrompt(e.target.value)}  className="prompt-textField"/>
+                <Box width="50%" />
                 <Button type="submit" onClick={successMessage}>Inspire Others</Button>
             </form>
         </div>

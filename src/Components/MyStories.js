@@ -26,15 +26,17 @@ const MyStories = (props) => {
     return (
         <div>
             <Button onClick={getUserStories} variant="outlined">See My Stories</Button>
+            <div className="story-collection">
             {stories.map((story) => {
                 return (
-                <div>
+                <div className="single-story">
                 <Link key={story.id} to={`/MyStories/${story.id}/Revisions`}>{story.title}</Link>
                 <p>{story.story}</p>
                 <DeleteBtn deletedStory={story.id}/>
                 </div>
                 )
             })}
+            </div>
         </div>
     )
 }

@@ -4,21 +4,14 @@ import { TextField, Box, Button} from '@material-ui/core'
 import { Textarea } from "@chakra-ui/react"
 import axios from 'axios'
 
-
 const StoryForm = (props) => {
     const [title, setTitle] = useState('')
     const [story, setStory] = useState('')
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     axios.post(`${process.env.REACT_APP_BACKEND_URL}/stories`, {title, story},
-    //     {headers:{Authorization: props.userId}}).then((response) => {
-    //         console.log(response)
-    //     })
-    // }
+    
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+
+    const handleSubmit = () => {
         if (localStorage.getItem('userId')) {
             axios.post(`${process.env.REACT_APP_BACKEND_URL}/stories`, {title, story, prompt_id:props.prompt}, {
                 headers: {
@@ -30,6 +23,7 @@ const StoryForm = (props) => {
         }
     }
 
+    
     return (
         <div>
             <form onSubmit={handleSubmit}>

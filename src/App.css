@@ -260,6 +260,35 @@ input:nth-of-type(5):checked ~ main#carousel {
   color:rosybrown;
 }
 
+.create-story {
+  background-color: #3a5311;
+}
+
+Textarea {
+  box-shadow: 5px 5px 5px 5px;
+  background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pdfeminine1-20c-nap.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=80beb269fa5e8c069ce1cfc3b0da20de);
+  font-size: 25px;
+}
+
+.prompt-input {
+  font-family: 'Anton';
+  border: 1px solid black;
+}
+
+.prompt-textField {
+  width: 400px;
+}
+
+.story-collection {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.single-story {
+  border: 1px solid;
+}
+
 .story-container {
   border: 1px solid black;
   height: 100%;
