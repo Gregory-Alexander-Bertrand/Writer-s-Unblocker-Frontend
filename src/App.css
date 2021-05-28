@@ -191,7 +191,7 @@ input:nth-of-type(5):checked ~ main#carousel {
 }
 
 .all-prompts {
-  height: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,10 +245,9 @@ input:nth-of-type(5):checked ~ main#carousel {
 }
 
 .prompt-container {
-  border: 1px solid black;
   background-image: url(https://images.unsplash.com/photo-1555601568-c9e6f328489b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
   background-size: cover;
-  height: 800px;
+  height: fit-content;
 }
 
 .prompt-links {
@@ -257,7 +256,11 @@ input:nth-of-type(5):checked ~ main#carousel {
 }
 
 .prompt {
-  color:rosybrown;
+  color:rgb(211, 188, 188);
+}
+
+.prompt:hover {
+  color: #bc544b;
 }
 
 .create-story {
@@ -279,6 +282,7 @@ Textarea {
 
 .prompt-textField {
   width: 400px;
+  color: #deb887;
 }
 
 .stories-btn {

@@ -7,8 +7,7 @@ import axios from 'axios'
 const CommentBox = (props) => {
     const [body, setBody] = useState('')
 
-    const commentSubmit = (e) => {
-        e.preventDefault()
+    const commentSubmit = () => {
         if (localStorage.getItem('userId')) {
             axios.post(`${process.env.REACT_APP_BACKEND_URL}/stories/story/${props.commentSubmit}/comment`, {body}, {
                 headers: {

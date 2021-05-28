@@ -88,7 +88,7 @@ function App() {
      if(user.id) {
        return <ReadStories user={user} />
      } else {
-       return <Redirect to="/" />
+       return <Redirect to="/ReadStories" />
      }
    }}
    />

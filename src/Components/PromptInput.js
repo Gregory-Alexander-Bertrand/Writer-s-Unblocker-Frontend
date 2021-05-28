@@ -12,8 +12,7 @@ const PromptInput = () => {
     const [genre, setGenre] = useState('')
     const [prompt, setPrompt] = useState('')
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = () => {
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/prompt`, {
             genre, prompt
         }).then((response) => {
